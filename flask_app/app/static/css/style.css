@@ -1,0 +1,35 @@
+h1{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+h2{
+    margin-top: 60px;
+    margin-left: 30px;
+}
+
+h3{
+    margin-top: 60px;
+    margin-left: 60px;
+}
+
+p{
+    width: 360px;
+    margin-left: 10px;
+    background-color: lightsalmon;
+}
+
+
+li{
+    margin-left: 60px;
+    width: 360px;
+    background-color: blanchedalmond;
+}
+
+img{
+    width: 400px;
+    height: 280px;
+    padding: 10px;
+    border:solid 5px coral;
+    border-radius: 80px;
+}
