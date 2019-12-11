@@ -39,9 +39,9 @@ def recommend():
     # "form name (as set in template)" (key): "string in the textbox" (value)
     index_key, recs  = ft_to_rec(request.args) #input and pred from make_pred ftn; request.args-reading in user inputs from webpage
     #img_idx, names_list  = ft_to_rec(request.args) 
-    return flask.render_template('picrec.html', index_key=index_key,
+    return render_template('picrec.html', index_key=index_key,
                                 recommendations=recs, bbc_path=bbc_path, bbc_ft=bbc_ft) 
-#get typeerror 
+
 
 if __name__ == '__main__':
     app.run(debug=True)

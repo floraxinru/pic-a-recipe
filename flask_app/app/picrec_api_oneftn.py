@@ -40,7 +40,7 @@ def ft_to_rec(img_idx):#input from user (html form) is dict
         sim_list.append(cos_sim)
         sim_array = np.array(sim_list).argsort(axis=None)
         #flip to sort from largest cos sim values (most similar) to smallest
-        sim_sorted = np.flipud(sim_array)[1:5+1] #num=5, hardcoded
+        sim_sorted = np.flipud(sim_array)[0:6] #hardcoded, prev 1:5+1 for just 5 rec, no original img
     #return sim_sorted
     
     #Stores all image names in directory into a list - same as bbc_list = !ls... in jupyter - cmd line doesn't work in py?
@@ -69,35 +69,40 @@ def ft_to_rec(img_idx):#input from user (html form) is dict
     recipe_list = [] 
     pic_list = []
     for filepath in path_list:
-        #pic_list.append(filepath)
-        pic_list.append(bbc_path+filepath)
-
+        #pic_list.append(filepath) 
+        pic_list.append('images/bbc_photos/pages-photos/'+filepath) #add to relative path after uploading to static folder
+        print(pic_list)
         #recipename = re.sub(r'_',' ',str(filepath))
-        recipename = re.findall(r"(\w+_)", str(filepath))
-        recipename = re.sub(r'(_)',' ', str(recipename)) 
+        #recipename = re.findall(r"(\w+_)", str(filepath)) #findall returns a list!
+        #\w+ matches any word character (equal to [a-zA-Z0-9_])
+        #[^\w] will match anything that's not alphanumeric or underscore
+        recipename = re.sub(r'_',' ',filepath)
+        recipename = re.sub(r'[\d]',' ', recipename)#replace digits with whitespace
+        recipename = re.sub(r'\s+\w+\s\W\w+', '', recipename) #remove trailing spaces and .jpg extension
+        #from previous output ('chocolate brownie         x .jpg') #flags = re.I - case insensitive
         recipe_list.append(recipename)
-        #print(recipe_list) #how to clean up output further?
-        #inconsistent, some image names don't have underscores!
+        print(recipe_list) #clean up output further using regex?
+
+        #inconsistent naming, some image names don't have underscores!
+    #print(pic_list)
 
 
-    #Prints out top 5 most similar images
-  
-    #for filename in path_list:
-        #img=mpimg.imread(bbc_path+filename) 
-        #print(img) #array from imread, not filepath!!
-        #imgplot = plt.imshow(img) #unused var? 
-
-            #use diff ftn to show image - html
-            #plt.show(img) #get truth value ambiguous error (even though no == in my ftn) with this line, without, prints last img
-            #change and save img/display on webpage?
-        #pic_list.append(img)
-        #pic_list.append(imgplot)
+    #list of top 5 recommendations (shortcut*)
+    #can improve this by adding first part of url to file path! regex
+    #hardcoded for ID=193:cake
+    url_list = ['','https://www.bbc.co.uk/food/recipes/chocolate_brownie_64092', 
+    'https://www.bbc.co.uk/food/recipes/chocolate_cake_48307',
+    'https://www.bbc.co.uk/food/recipes/coffee_and_walnut_cake_03763',
+    'https://www.bbc.co.uk/food/recipes/celebration_chocolate_18175',
+    'https://www.bbc.co.uk/food/recipes/coffeeandwalnutcake_83909']
+    ##link mismatch, only printing top 4 recs!
         
     #return pic_list
 
 
 
-    recs = [{'name': recipe_list}, {'pic': pic_list}]
+    #recs = [{'name': recipe_list}, {'pic': pic_list}]
+    recs = [{'name':recipe, 'link':link, 'pic':pic} for recipe, link, pic in zip(recipe_list, url_list, pic_list)]
     #loop? probs = [{'name': lr_model.target_names[index], 'prob': pred_probs[index]} #save prediction prob as list of dict
              #for index in np.argsort(pred_probs)[::-1]]
            
