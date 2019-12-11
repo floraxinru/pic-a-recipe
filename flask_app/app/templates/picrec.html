@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Pic-a-Recipe Recommender</title>
+  <title>Pic-a-Recipe</title>
   <!--<link rel="stylesheet" 
   href="style.css">  not seeing stylesheet take effect-->
   <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
@@ -20,42 +20,43 @@
         
           <form action="/recommend"> 
             <br>
-            image index
+            <p>Image index
             <input type="text" name="image_index" value=1412> 
             <!--use this tag to grab user input; value sets a default value; each <input> tag as a unique name-->
             <!--actually want input value to be URL, then extract index-->
             <br>
-            <input type="submit" value="Get Recipes!" method="get">
-          <!--don't have a location to print names_list output!-->
-          <br>
+            <input type="submit" value="Get Recipes!" method="get"></p>
          <!--<button type="submit" onclick= >Get Recipes!</button> change style of button, hover, colour-->
       </form>
-      <br>
       <p>
-        <!--*print image instead? should print out original recipe also - need jinja for loop; no pprint option here?-->
+        Selected image:
+        <br>
+        {% for r in recommendations[:1] %}
+         <img src="{{ url_for('static', filename=r['pic']) }}">
+         {% endfor %}
+        <br>
           Top 5 recommended recipes:
           <br>
-          {% for r in recommendations %}
-          <br>  {{r['name']}}
-          {% endfor %}
-          <br>
+          {% for r in recommendations[1:] %}
+           <br>  {{r['name']}}
+           <br> 
+           <a href="{{r['link']}}" target="_blank">
+            <img src="{{ url_for('static', filename=r['pic']) }}">
+          </a>
+           
+           
+           {% endfor %}
+          
+          
 
-          Recipe images:
-          <br>
-          {% for i in recommendations %}
-          <br> 
-          <img src="{{ url_for('static/images', filename=i['pic']) }}">
-          <!--<img src="{{i['pic']}}">-->
-          {% endfor %}
+          
+         
   
-        </p>
+      </p>
        
   
 
       <br>
-
-
-      <img src='https://storage.needpix.com/rsynced_images/japanese-food-2199962_1280.jpg'>
 
 
 
