@@ -1,11 +1,11 @@
 # pic-a-recipe
 
 ### Motivation
-We are often taking photos of our food when eating out. How many times have you seen a photo on social media and thought - *"I want to have that"*? But what is you don't know the name of the dish?
+We are often taking photos of our food when eating out. How many times have you seen a photo on social media and thought - *"I want to have that"*? But what if you don't know the name of the dish?
 
-A related problem is, quite often when travelling abroad we eat something we really like, snap a photo of it, then forget what it was called. So we couldn't easily search for the recipe when we get home. 
+A related problem is, when travelling abroad we may eat something we really like, snap a photo of it, then forget what it is called. So we couldn't easily search for the recipe when we get home. 
 
-I would like to build a usable recipe recommendation system in the form of a web app, where the recommendation is generated based on a photo.
+I would like to **build a usable recipe recommendation system in the form of a web app, where the recommendation is generated based on a photo.**
 
 Another personal motivation for this data science project is to dive deeper into the domain for my Metis Project 4. Like in my previous Metis project ([Project 4 proposal](https://github.com/floraxinru/metisproject04/blob/master/Project4_proposal_v2.pdf)), I want to encourage people to expand their palate, as well as help them recreate dishes similar to the ones they’ve had in restaurants.
 
