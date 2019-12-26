@@ -28,8 +28,12 @@ AWS EC2, GitHub, cookiecutter (datasciencemvp template)
 
 
 ### Results
+(currently having trouble uploading/displaying Flask App demo video, will update soon)
 
 ### Future Work
+I was fairly close to merging the CNN and NLP portions of this project, before I had to make the difficult decision of scrapping the NLP and topic modelling results to focus on making a Flask web app and practice my presentation. For future work I would like to finish debugging that part of the code, in order to reduce the amount of images that would be included in the cosine similarity calculation ("filtering" the images by the NLP-generated topics).
+
+Eventually I would also like to train the model on a larger dataset, so it would perform better when predicting user images. At that point it would be great to make the web app mobile-friendly (probably need to change the CNN architecture to use MobileNetV2, which would be a side project on its own), and to deploy it so other people can use it.
 
 ### Lessons Learned
 (blogpost coming soon)
@@ -38,7 +42,7 @@ AWS EC2, GitHub, cookiecutter (datasciencemvp template)
 ### Selected References
 StackOverflow
 
-Design - Metis projects: 
+Design Inspirations - two excellent Metis projects: 
 - https://jhonsen.github.io/2019/04/22/Produce2Recipe/
 - https://hengrumay.github.io/MenuPlannerHelper/
 
