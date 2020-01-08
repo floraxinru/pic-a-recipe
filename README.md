@@ -11,9 +11,20 @@ Another personal motivation for this data science project is to dive deeper into
 
 
 ### Design
+Because this was my final project at Metis and a passion project, I got really excited and a bit too ambitious in the proposal stage. I wanted to work NLP which was my favourite aspect, as well as work with images and deep learning which was the newest field we covered during lectures. My initial goal was to tackle image classification of food pictures. But after some initial research I realized this is a difficult problem in an area of ongoing research and would be impractical for me to expect to make a significant contribution within a few weeks (each improvement on a CNN architecture might be a valid PhD thesis).
+
+But I did accomplish the following goals in my proposal:
+>>> The pipeline I am hoping to build will start from the photograph of a dish (which could be taken at a restaurant and uploaded to Instagram), to a classifier which outputs the type of food (for example: pasta, pizza, cake), to recipe recommendations of related dishes. 
+>>> For the end product, I hope to make a (mobile-friendly) working Flask web app, where the user can click on (or upload) an image, get the list of top classification results, as well as recipe recommendations in the form of links to recipes on the source websites.
 
 ### Data
-
+I used data from this data dump of 140K English recipes with images (https://archive.org/details/recipes-en-201706), and figured out how to extract the tar.xz files. Since recipe data is time-insensitive, I decided to use this data instead of scraping from the same websites on my own. The data was scraped from four websites in the Summer of 2017:
+Contents
+    allrecipes.com: 91K recipes, with photos, HTML, and crawling code
+    epicurious.com: 34K recipes, with photos, JSON, and crawling code
+    bbc.co.uk:      10K recipes, with photos, HTML, and crawling code
+    cookstr.com:    8K recipes, with photos, HTML, and crawling code
+There were issues with the labelling of the images as well as image formats. I ended up using the bbc dataset for my mvp as well as the final Flask App demo because it has the most informative image names.
 
 ### Tools
 Python, Pandas, NumPy, SciPy, scikit-learn, nltk, Gensim
@@ -28,6 +39,7 @@ AWS EC2, GitHub, cookiecutter (datasciencemvp template)
 
 
 ### Results
+I successfully built a pipeline which goes from an uploaded image to the top 5 recipe recommendations, using cosine similarity (between VGG16-extracted image features) as the metric, all interactive in my very first Flask app. 
 (currently having trouble uploading/displaying Flask App demo video, will update soon)
 
 ### Future Work
