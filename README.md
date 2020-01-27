@@ -40,6 +40,9 @@ AWS EC2, GitHub, cookiecutter (datasciencemvp template)
 
 ### Results
 I successfully built a pipeline which goes from an uploaded image to the top 5 recipe recommendations, using cosine similarity (between VGG16-extracted image features) as the metric, all interactive in my very first Flask app. 
+
+The model works well for certain types of recipe images: For a roasted turkey image, 4 of the top 5 recommendations are roasted turkey/chicken/goose. For a layered chocolate cake, all top 5 recommendations (and most of the top 20) are layered chocolate cakes or layered cakes. I showed these two types in my Flask app demo.
+
 (currently having trouble uploading/displaying Flask App demo video, will update soon)
 
 ### Future Work
