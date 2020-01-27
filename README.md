@@ -7,7 +7,7 @@ A related problem is, when travelling abroad we may eat something we really like
 
 I would like to **build a usable recipe recommendation system in the form of a web app, where the recommendation is generated based on a photo.**
 
-Another personal motivation for this data science project is to dive deeper into the domain for my Metis Project 4. Like in my previous Metis project ([Project 4 proposal](https://github.com/floraxinru/metisproject04/blob/master/Project4_proposal_v2.pdf)), I want to encourage people to expand their palate, as well as help them recreate dishes similar to the ones they’ve had in restaurants.
+Another personal motivation for this data science project is to dive deeper into the domain for my Metis Project 4. Like in my [previous Metis project](https://github.com/floraxinru/nlp_recipe_recommender), I want to encourage people to expand their palate, as well as help them recreate dishes similar to the ones they’ve had in restaurants.
 
 
 ### Design
